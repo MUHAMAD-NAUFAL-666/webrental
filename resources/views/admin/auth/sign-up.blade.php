@@ -105,11 +105,13 @@
 									<input type="text" placeholder="Name" name="name" autocomplete="off" class="form-control bg-transparent" />
 									<!--end::Email-->
 								</div>
+								
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
 									<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
 									<!--end::Email-->
 								</div>
+								
 								<!--begin::Input group-->
 								<div class="fv-row mb-8" data-kt-password-meter="true">
 									<!--begin::Wrapper-->

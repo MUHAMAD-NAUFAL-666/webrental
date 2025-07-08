@@ -94,7 +94,8 @@
 					<!--begin::Wrapper-->
 					<div class="d-flex flex-center flex-column flex-column-fluid px-lg-10 pb-15 pb-lg-20">
 						<!--begin::Form-->
-						<form class="form w-100" action="{{ route('sign-in') }}" method="POST">
+
+						<form method="POST" action="{{ route('sign-in') }}">
 							@csrf
 							<!--begin::Heading-->
 							<div class="text-center mb-11">
@@ -139,13 +140,19 @@
 							<!--end::Separator-->
 							<!--begin::Input group=-->
 
-							<!-- Add session error messages -->
-
+							<!-- Tampilkan error validation -->
+						
+							<!-- Atau khusus untuk error email -->
 							<div class="fv-row mb-8">
 								<!--begin::Email-->
-								<input type="text" placeholder="Email" name="email" autocomplete="off"
-									class="form-control bg-transparent" />
+								<input type="email" placeholder="Email" name="email" autocomplete="off"
+									class="form-control bg-transparent @error('email') is-invalid @enderror" value="{{ old('email') }}" required />
 								<!--end::Email-->
+								@error('email')
+									<div class="invalid-feedback">
+										{{ $message }}
+									</div>
+								@enderror
 							</div>
 							<!--begin::Input group-->
 							<div class="fv-row mb-8" data-kt-password-meter="true">
@@ -153,14 +160,19 @@
 								<div class="mb-1">
 									<!--begin::Input wrapper-->
 									<div class="position-relative mb-3">
-										<input class="form-control bg-transparent" type="password"
-											placeholder="Password" name="password" autocomplete="off" />
+										<input class="form-control bg-transparent @error('password') is-invalid @enderror" type="password"
+											placeholder="Password" name="password" autocomplete="off" required />
 										<span
 											class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2"
 											data-kt-password-meter-control="visibility">
 											<i class="ki-outline ki-eye-slash fs-2"></i>
 											<i class="ki-outline ki-eye fs-2 d-none"></i>
 										</span>
+										@error('password')
+											<div class="invalid-feedback">
+												{{ $message }}
+											</div>
+										@enderror
 									</div>
 									<!--end::Input wrapper-->
 									<!--begin::Meter-->

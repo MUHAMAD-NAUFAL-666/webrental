@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -22,7 +23,7 @@ Route::middleware('guest')->group(function () {
     })->name('sign-in');
 
     Route::get('/sign-up', function () {
-        return view('admin.auth.sign-up');
+        return view('admin.auth.sign-up');  
     })->name('sign-up');
 
     Route::post('/sign-up', [RegisterController::class, 'register'])->name('sign-up');
@@ -47,7 +48,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->midd
 // Rute Verifikasi Email
 Route::middleware('auth')->group(function () {
     Route::get('/email/verify', function () {
-        return view('auth.verify-email');
+        return view('admin.auth.verifikasi-otp');
     })->name('verification.notice');
 
     Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
@@ -62,6 +63,9 @@ Route::middleware('auth')->group(function () {
 });
 
 // Rute Lupa Password
+Route::get('/lupa-pw', function () {
+    return view('admin.auth.lupa-pw');
+})->name('password.request');
 Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink'])->name('password.email');
 Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('/reset-password', [ForgotPasswordController::class, 'reset'])->name('password.update');

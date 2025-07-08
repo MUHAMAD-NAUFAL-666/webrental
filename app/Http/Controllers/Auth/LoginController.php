@@ -32,9 +32,11 @@ class LoginController extends Controller
             abort(403, 'Unauthorized access');
         }
 
-        return redirect()->route('sign-in')->withErrors([
+        // Perbaikan: Pastikan menggunakan back() atau route yang konsisten
+        return back()->withErrors([
             'email' => 'Email atau password yang dimasukkan tidak sesuai.',
-        ])->withInput();
+            'password' => 'Email atau password yang dimasukkan tidak sesuai.',
+        ])->withInput($request->except('password'));
     }
     public function logout(Request $request)
     {
