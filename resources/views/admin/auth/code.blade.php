@@ -58,7 +58,7 @@
         </div>
 
         <div class="message">
-            <p>This code will expire in 60 minutes.</p>
+            <p>This code will expire in 60 minutes. Ya Ganteng</p>
             <p>If you didn't request this code, please ignore this email.</p>
         </div>
 
