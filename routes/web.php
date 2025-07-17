@@ -11,6 +11,7 @@ use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PenyewaanController;
 use App\Http\Controllers\WelcomeController;
 use App\Models\User;
+use App\Http\Controllers\Auth\PhoneController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManajemenBarangController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -21,6 +22,11 @@ Route::middleware('guest')->group(function () {
     Route::get('/', function () {
         return view('admin.auth.sign-in');
     })->name('sign-in');
+
+    // Phone Login Routes
+Route::get('/phone-login', [App\Http\Controllers\Auth\PhoneController::class, 'showLoginForm'])->name('phone.login.form');
+Route::post('/phone-send-otp', [App\Http\Controllers\Auth\PhoneController::class, 'sendOtp'])->name('phone.send.otp');
+Route::post('/phone-verify-otp', [App\Http\Controllers\Auth\PhoneController::class, 'verifyOtp'])->name('phone.verify.otp');
 
     Route::get('/sign-up', function () {
         return view('admin.auth.sign-up');  

@@ -31,6 +31,7 @@ protected $table = 'users';
         'email_verified_at',
         'role',
         'status',
+        'phone',
         'no_wa',
     ];
 
