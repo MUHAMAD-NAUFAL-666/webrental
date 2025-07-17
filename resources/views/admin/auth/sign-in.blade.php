@@ -21,6 +21,12 @@
 	<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 	<!--begin::Fonts(mandatory for all pages)-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+	<!-- PWA Setup -->
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#0d6efd" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
 	<!--end::Fonts-->
 	<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
 	<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
@@ -331,6 +337,13 @@
 	<script src="assets/js/custom/authentication/sign-in/general.js"></script>
 	<!--end::Custom Javascript-->
 	<!--end::Javascript-->
+	<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('SW registered!', reg))
+      .catch(err => console.log('SW registration failed!', err));
+  }
+</script>
 </body>
 <!--end::Body-->
 
