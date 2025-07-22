@@ -1040,7 +1040,6 @@
             // Append other form fields
             formData.append('_token', document.querySelector('input[name="_token"]').value);
             formData.append('nama', document.getElementById('tambahNama').value);
-            formData.append('gambar', document.getElementById('tambahGambar').value);
             formData.append('merek', document.getElementById('tambahMerek').value);
             formData.append('os', document.getElementById('tambahOs').value);
             formData.append('ram', document.getElementById('tambahRam').value);
@@ -1090,7 +1089,6 @@
             formData.append('_token', document.querySelector('input[name="_token"]').value);
             formData.append('nama', document.getElementById('tambahHandphoneNama').value);
             formData.append('merek', document.getElementById('tambahHandphoneMerek').value);
-            formData.append('gambar', document.getElementById('tambahHandphoneGambar').value);
             formData.append('os', document.getElementById('tambahHandphoneOs').value);
             formData.append('ram', document.getElementById('tambahHandphoneRam').value);
 
@@ -1151,6 +1149,7 @@
     </script>
 
     <script>
+
         function showEditModal(id, nama, gambar, chipset, jaringan, baterai, layar, kamera, merek, kategori, os, ram, storage, harga_sewa, status) {
             document.getElementById('editId').value = id;
             document.getElementById('editNama').value = nama;
@@ -1280,6 +1279,8 @@
                 }
             });
         }
+
+        
     </script>
 </body>
 
