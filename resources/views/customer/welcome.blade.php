@@ -543,7 +543,7 @@
 
                                 </div>
                                 <button class="btn btn-primary rounded-pill w-100 d-flex justify-content-center py-3"
-                                    data-bs-toggle="modal" data-bs-target="#rentalModal" data-device="iPhone 15 Plus">Book
+                                    data-bs-toggle="modal" data-bs-target="#rentalModal" data-device="{{ $h->nama }}">Book
                                     Now</button>
 
                             </div>
@@ -610,7 +610,7 @@
                                     </div>
                                 </div>
                                 <button class="btn btn-primary rounded-pill w-100 d-flex justify-content-center py-3"
-                                    data-bs-toggle="modal" data-bs-target="#rentalModal" data-device="iPhone 15 Plus">Book
+                                    data-bs-toggle="modal" data-bs-target="#rentalModal" data-device="{{ $l->nama }}">Book
                                     Now</button>
 
                             </div>
@@ -716,7 +716,7 @@
                                 </div>
                             </div>
                             <button class="btn btn-primary rounded-pill w-100 d-flex justify-content-center py-3"
-                                data-bs-toggle="modal" data-bs-target="#rentalModal" data-device="iPhone 15 Plus">Book
+                                data-bs-toggle="modal" data-bs-target="#rentalModal" data-device="Samsung S24 Ultra">Book
                                 Now</button>
                         </div>
 
@@ -765,7 +765,7 @@
                                 </div>
                             </div>
                             <button class="btn btn-primary rounded-pill w-100 d-flex justify-content-center py-3"
-                                data-bs-toggle="modal" data-bs-target="#rentalModal" data-device="iPhone 15 Plus">Book
+                                data-bs-toggle="modal" data-bs-target="#rentalModal" data-device="Macbook M3 Air">Book
                                 Now</button>
                             </button>
                         </div>

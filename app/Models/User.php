@@ -35,6 +35,8 @@ protected $table = 'users';
         'no_wa',
     ];
 
+    
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -59,4 +61,9 @@ protected $table = 'users';
             'password' => 'hashed',
         ];
     }
+
+    public function penyewaans()
+{
+    return $this->hasMany(Penyewaan::class, 'id_user');
+}
 }

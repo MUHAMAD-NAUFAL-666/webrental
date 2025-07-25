@@ -12,8 +12,10 @@ use App\Http\Controllers\PenyewaanController;
 use App\Http\Controllers\WelcomeController;
 use App\Models\User;
 use App\Http\Controllers\Auth\PhoneController;
+use App\Http\Controllers\CustomerDashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManajemenBarangController;
+use App\Http\Middleware\CustomerMiddleware;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
@@ -162,3 +164,5 @@ Route::get('/delete-penyewaan/{id_sewa}', [PenyewaanController::class, 'deletePe
     Route::post('/penyewaan/store', [PenyewaanController::class, 'store'])->name('penyewaan.store');
 
     Route::put('/admin/profile/update', [AdminController::class, 'updateProfile'])->name('admin.profile.update');
+
+Route::get('/customer', [CustomerDashboardController::class, 'index'])->middleware(['auth', 'verified']);

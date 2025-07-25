@@ -61,4 +61,16 @@ class Penyewaan extends Model
         'updated_at',
         'tanggal_sewa'
     ];
+
+    public function barang()
+{
+    if ($this->kategori === 'handphone') {
+        return $this->belongsTo(Handphone::class, 'barang_id');
+    } elseif ($this->kategori === 'laptop') {
+        return $this->belongsTo(Laptop::class, 'barang_id');
+    }
+
+    return null;
+}
+
 }
